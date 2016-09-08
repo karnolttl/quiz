@@ -1,0 +1,88 @@
+body {
+  background-color: whitesmoke;
+  text-align: center;
+  min-width: 320px;
+  max-width: 500px;
+  margin: auto;
+  font-family: 'Oswald', sans-serif;
+  box-sizing: border-box;
+}
+
+#sign-title > span {
+  display: block;
+}
+
+#guess-button {
+  background-color: lightgrey;
+  font-size: 1.25rem;
+  padding: .125rem .5rem;
+  margin: .5rem auto;
+  width: 10rem;
+}
+
+#sign-group {
+  box-sizing: border-box;
+  position: relative;
+  padding: 0 0;
+  margin: auto;
+  overflow: hidden;
+  /* changing the font size to 0 of the container element
+  allows the child elements of a 50% width to wrap as expected
+  without removing whitespace from the html */
+  font-size: 0;
+}
+
+.sign {
+  box-sizing: border-box;
+  width: 50%;
+  padding: 2% 2%;
+}
+
+#message {
+  box-sizing: border-box;
+  position: absolute;
+  width: 90%;
+  margin: auto;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 2rem;
+  background-color: rgba(255,255,255,0.9);
+  color: crimson;
+  font-size: 1.5rem;
+}
+
+#message > span {
+  display: block;
+}
+
+#stats {
+  border-top: 1px solid lightgrey;
+  font-size: 0;
+}
+
+.progress, .score {
+  box-sizing: border-box;
+  display: inline-block;
+  width: 50%;
+  padding: 2% 2%;
+  font-size: 1rem;
+}
+
+.progress {
+  border-right: 1px solid lightgrey;
+}
+
+#question-number {
+  display: block;
+  font-size: 1.5rem;
+}
+
+#score-value {
+  display: block;
+  font-size: 1.5rem;
+}
+
+.hidden {
+  visibility: hidden;
+}
