@@ -9,20 +9,16 @@ body {
   position: relative;
 }
 
-#intro-modal {
+#intro-modal, #results-modal{
   z-index: 10000;
   background-color: whitesmoke;
   position: absolute;
   height: 100%;
 }
 
-#intro-modal > p{
+#intro-modal > p, #results-modal > p {
   text-align: left;
   padding: .25rem 1.25rem;
-}
-
-#intro {
-  
 }
 
 #start-button {
@@ -34,16 +30,26 @@ body {
   width: 12rem;
 }
 
+#start-button:hover {
+  cursor: pointer;
+}
+
+#results-modal {
+  top:0;
+  width: 100%;
+}
+
+#results-modal > .align-center {
+  text-align: center;
+}
+
 #sign-title > span {
   display: block;
 }
 
-#guess-button {
-  background-color: lightgrey;
+#points-value {
+  height: 1.25rem;
   font-size: 1.25rem;
-  padding: .125rem .5rem;
-  margin: .5rem auto;
-  width: 10rem;
 }
 
 #sign-group {
@@ -64,10 +70,15 @@ body {
   padding: 2% 2%;
 }
 
+#sign-group > .hov:hover {
+  cursor: pointer;
+  background-color: darkgrey;
+}
+
 #message {
   box-sizing: border-box;
   position: absolute;
-  width: 100%;
+  width: 99%;
   margin: auto;
   top: 50%;
   left: 50%;
@@ -76,6 +87,10 @@ body {
   background-color: rgba(255,255,255,0.9);
   color: crimson;
   font-size: 1.5rem;
+}
+
+#message:hover {
+  cursor: pointer;
 }
 
 #message > span {
@@ -115,4 +130,8 @@ body {
 
 .hidden {
   visibility: hidden;
+}
+
+.removed {
+  display: none;
 }

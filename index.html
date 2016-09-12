@@ -15,25 +15,33 @@
 			<img class="sign" id="intro" src="img/intro.png" alt="" width="200">
 			<p>So you want be a delivery driver on the streets of the Czech Republic?</p>
 			<p>Well.....before you saddle up, you must pass a quick road signage test.</p>
-			<p><strong>Safety is number one!</strong></p>
+			<p>Safety is number one!</p>
 			<p>For each question, match the actual traffic sign with the displayed phrase.</p>
 			<div id="start-button">Let's get started!</div>
 		</div>
 		<!-- Main layout -->
-		<h1 id="sign-title">Danger!<span>Accident blackspot!</span></h1>
-		<div id="guess-button">Guess (5pts.)</div>
+		<h1 id="sign-title"></h1>
+		<div id="points-value">(5 points)</div>
 		<div id="sign-group">
-			<img class="sign" id="sign0" src="img/accident-blackspot-0.png" alt="" width="200">
-			<img class="sign" id="sign1" src="img/accident-blackspot-1.png" alt="" width="200">
-			<img class="sign" id="sign2" src="img/accident-blackspot-2.png" alt="" width="200">
-			<img class="sign" id="sign3" src="img/accident-blackspot-3.png" alt="" width="200">
-			<div id="message"><span>Nope.</span><span>Try again. You can do it!</span></div>
+			<img src="" class="sign" alt="">
+			<img src="" class="sign" alt="">
+			<img src="" class="sign" alt="">
+			<img src="" class="sign" alt="">
+			<div class="hidden" id="message"></div>
 		</div>
 		<div id="stats">
-			<div class="progress">Question:<span id="question-number">1 of 5</span></div>
+			<div class="progress">Question:<span id="question-number"></span></div>
 			<div class="score">Score:<span id="score-value">0</span></div>
 		</div>
+		<div id="results-modal" class="removed">
+			<p class='align-center'>Wow! Look at your score!</p>
+			<p class="align-center final-score">21 of 25</p>
+			<h1>You Pass!</h1>
+			<p>The score doesn't really count... You passed on the merits of you being <strong>YOU</strong>!</p>
+			<p>Also, you wouldn't be yourself if you were someone else.</p>
+		</div>
 		<script src="//code.jquery.com/jquery.min.js"></script>
+		<script src="js/lodash.min.js"></script>
     <script src="js/app.js"></script>
   </body>
 </html>
