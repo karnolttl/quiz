@@ -7,6 +7,9 @@ $(document).ready(function() {
   questionMgr.numOfQuestions = questionMgr.questions.length;
   questionMgr.points = _.fill(new Array(questionMgr.numOfQuestions),5);
 
+  var reactionsWrong = ['No points', 'Try harder!', 'Sorry', 'Nice try'];
+  var reactionsRight = ['Great!', 'Fantastic!', 'Way to go!', 'Correct!'];
+
   generateQuestion();
   enableGame();
 
@@ -27,7 +30,9 @@ $(document).ready(function() {
 
   function enableGame() {
     $('#sign-group').on('click', 'img', function() {
-      n = Number($(this).attr('src').slice(-5).slice(0,1));
+      var src = $(this).attr('src');
+      var str = /\-([0-3])\.png/.exec(src);
+      var n = Number(str[1]);
       evaluateSelection(n, $(this))
     });
   }
@@ -39,7 +44,9 @@ $(document).ready(function() {
 
   function hideFakes() {
     $('#sign-group img:not(.hidden)').each(function() {
-      n = Number($(this).attr('src').slice(-5).slice(0,1));
+      var src = $(this).attr('src');
+      var str = /\-([0-3])\.png/.exec(src);
+      var n = Number(str[1]);
       if(n !== 0) {
         $(this).addClass('hidden');
       }
@@ -73,7 +80,7 @@ $(document).ready(function() {
       var pts = questionMgr.points[questionMgr.currentIndex]-=2;
       if (pts < 0) {
         $('#points-value').text('');
-        pauseGame("<span>Sorry</span><span>Try again. You can do it!</span>");
+        pauseGame(reactionsWrong[_.random(0,reactionsWrong.length)]);
         questionMgr.points[questionMgr.currentIndex] = 0;
       }
       else {
@@ -87,7 +94,7 @@ $(document).ready(function() {
       var s = Number($scoreValue.text());
       s += questionMgr.points[questionMgr.currentIndex];
       $scoreValue.html(s);
-      pauseGame("<span>Good job!</span><span>Keep it up.</span>");
+      pauseGame(reactionsRight[_.random(0,reactionsRight.length)]);
     }
   }
 
@@ -95,12 +102,4 @@ $(document).ready(function() {
     $(this).parent().fadeOut();
   });
 
-  $.fn.extend({
-    animateCss: function (animationName) {
-      var animationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
-          $(this).addClass('animated ' + animationName).one(animationEnd, function() {
-              $(this).removeClass('animated ' + animationName);
-          });
-      }
-  }); // end of fn.extend
 }); // end of document ready function

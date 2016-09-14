@@ -50,6 +50,7 @@ body {
 #points-value {
   height: 1.25rem;
   font-size: 1.25rem;
+  padding-bottom: .75rem;
 }
 
 #sign-group {
@@ -72,7 +73,7 @@ body {
 
 #sign-group > .hov:hover {
   cursor: pointer;
-  background-color: darkgrey;
+  background-color: lightgrey;
 }
 
 #message {
